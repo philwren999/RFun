@@ -71,20 +71,22 @@ if (interactive()) {
 
 ## Run the examples
 
-Open either [`hello.R`](hello.R) or [`sin_curve.R`](sin_curve.R) in VS Code.
-Click the **Run Source** play button in the editor toolbar to run the whole
-file. If an R terminal is not already open, create one from the Command Palette
-(**Ctrl+Shift+P** → **R: Create R Terminal**).
+Open an example file—[`hello.R`](hello.R), [`sin_curve.R`](sin_curve.R), or
+[`sierpinski.R`](sierpinski.R)—in VS Code. Click the **Run Source** play button
+in the editor toolbar to run the whole file. If an R terminal is not already
+open, create one from the Command Palette (**Ctrl+Shift+P** →
+**R: Create R Terminal**).
 
 Alternatively, run the script from the R terminal:
 
 ```r
-source("sin_curve.R")
+source("sierpinski.R")
 ```
 
 To run only a line or selection, press **Ctrl+Enter** in the editor.
 
 `hello.R` prints `6` and displays a plot. `sin_curve.R` draws a sine curve.
+`sierpinski.R` draws a Sierpiński triangle using base R.
 
 ## Recommended extensions
 
