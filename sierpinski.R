@@ -12,7 +12,7 @@ vertices <- rbind(
   c(0.5, sqrt(3) / 2)
 )
 
-iterations <- 50000L
+iterations <- 250000L
 coords <- matrix(0, nrow = iterations, ncol = 2)
 current <- c(0.5, sqrt(3) / 6)
 
