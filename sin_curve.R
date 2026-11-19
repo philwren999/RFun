@@ -1,7 +1,8 @@
 # Run this file in VS Code:
-# 1. Open the Command Palette (Ctrl+Shift+P) and choose "R: Create R Terminal".
-# 2. In the R terminal, run source("sin_curve.R") from this folder.
-# Alternatively, select code below and press Ctrl+Enter to run the selection.
+# Click the Run Source (play) button in the editor toolbar to run the whole file.
+# If needed, open the Command Palette (Ctrl+Shift+P) and choose "R: Create R Terminal".
+# Or run source("sin_curve.R") in the R terminal from this folder.
+# To run selected code, select it and press Ctrl+Enter.
 
 x <- seq(-2 * pi, 2 * pi, length.out = 500)
 

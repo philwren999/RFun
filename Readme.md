@@ -71,19 +71,18 @@ if (interactive()) {
 
 ## Run the examples
 
-Open either [`hello.R`](hello.R) or [`sin_curve.R`](sin_curve.R) in VS Code. To
-run an entire script:
+Open either [`hello.R`](hello.R) or [`sin_curve.R`](sin_curve.R) in VS Code.
+Click the **Run Source** play button in the editor toolbar to run the whole
+file. If an R terminal is not already open, create one from the Command Palette
+(**Ctrl+Shift+P** → **R: Create R Terminal**).
 
-1. Open the Command Palette with **Ctrl+Shift+P**.
-2. Choose **R: Create R Terminal**.
-3. In the R terminal, run:
+Alternatively, run the script from the R terminal:
 
-   ```r
-   source("sin_curve.R")
-   ```
+```r
+source("sin_curve.R")
+```
 
-Alternatively, select a line or block of code in the editor and press
-**Ctrl+Enter** to send it to the R terminal.
+To run only a line or selection, press **Ctrl+Enter** in the editor.
 
 `hello.R` prints `6` and displays a plot. `sin_curve.R` draws a sine curve.
 
