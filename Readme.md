@@ -1,104 +1,106 @@
-To set up Visual Studio Code (VS Code) for R development, follow these steps:
+# R Development with Visual Studio Code
 
-1. Install R
+This guide covers setting up R in Visual Studio Code (VS Code) and running the
+example script in this repository.
 
-Download and install R from CRAN:
+## Install R
 
-https://cran.r-project.org/
+Download and install R from [CRAN](https://cran.r-project.org/).
 
-After installation, verify it works:
+On Windows, verify the installation in PowerShell with:
 
-R --version
+```powershell
+R.exe --version
+```
 
-2. Install VS Code
+If `R.exe` is not on your `PATH`, run it using its full path.
 
-Download VS Code:
+## Install VS Code
 
-https://code.visualstudio.com/
-3. Install the R Extension
+Download and install [Visual Studio Code](https://code.visualstudio.com/).
 
-Open VS Code and install:
+## Install the R extension
 
-R (by REditorSupport)
+1. Open the Extensions view with **Ctrl+Shift+X**.
+2. Search for **R**.
+3. Install **R** by **REditorSupport**.
 
-Extensions view:
+## Install R packages
 
-Press Ctrl+Shift+X
-Search for "R"
-Install the extension by REditorSupport
-4. Install R Tools Package
+In an R console, install the packages used for language features and optional
+plot viewing:
 
-Open an R console and run:
+```r
+install.packages(c("languageserver", "httpgd"))
+```
 
-install.packages("languageserver")
-install.packages("httpgd")
+`languageserver` enables features such as code completion, IntelliSense, and
+hover help. `httpgd` provides an option for viewing plots in VS Code.
 
+## Configure the R path (if needed)
 
-These provide:
+VS Code usually finds R automatically. If it does not, open your VS Code
+`settings.json` and set `r.rterm.windows` to the path to your R executable. For
+example:
 
-Code completion
-IntelliSense
-Hover help
-Plot viewing in VS Code
-5. Configure the R Path (if needed)
-
-On Windows, VS Code usually finds R automatically. If not, add to your settings.json:
-
+```json
 {
-    "r.rterm.windows": "C:\\Program Files\\R\\R-4.6.0\\bin\\R.exe"
+  "r.rterm.windows": "C:\\Program Files\\R\\R-4.6.2\\bin\\x64\\R.exe"
 }
+```
 
+Adjust the path to match your R installation.
 
-Adjust the version number to match your installation.
+## Optional: configure the plot viewer
 
-6. Install Recommended Extensions
+Install `httpgd` if you have not already:
 
-Besides the R extension, I recommend:
-
-R Debugger
-GitLens (Git integration)
-Jupyter (for R notebooks)
-Quarto (for reports and publishing)
-7. Enable Plot Viewer (optional)
-
-In R:
-
+```r
 install.packages("httpgd")
+```
 
+To start the `httpgd` graphics device automatically in interactive R sessions,
+add this to your `.Rprofile`:
 
-Then add to your .Rprofile:
-
+```r
 if (interactive()) {
   library(httpgd)
   hgd()
 }
+```
 
+## Run the example
 
-Plots will appear directly inside VS Code.
+Open the included [`hello.R`](hello.R) file in VS Code. To run the entire script:
 
-8. Test the Setup
+1. Open the Command Palette with **Ctrl+Shift+P**.
+2. Choose **R: Create R Terminal**.
+3. In the R terminal, run:
 
-Create a file test.R:
+   ```r
+   source("hello.R")
+   ```
 
-x <- rnorm(100)
-mean(x)
+Alternatively, select a line or block of code in the editor and press
+**Ctrl+Enter** to send it to the R terminal.
 
-plot(x)
+The script prints `6` and displays a plot.
 
+## Recommended extensions
 
-Press:
+These extensions are optional:
 
-Ctrl+Enter to run the current line/selection
-Alt+Enter to run the whole file
-If you're working with GitHub projects
+- **R Debugger** for debugging R code.
+- **GitLens** for Git integration.
+- **Jupyter** for notebooks.
+- **Quarto** for reports and publishing.
 
-I can see you currently have a GitHub repository (RFun) open in your browser. A typical workflow would be:
+## Clone this repository
 
+To clone the repository and open it in VS Code:
+
+```sh
 git clone https://github.com/philwren999/RFun.git
 cd RFun
 code .
-
-
-This opens the repository directly in VS Code with Git integration ready to use.
-
-If you're on Windows, I can also show you how to set up Rtools, Git, package development (devtools, usethis), and debugging for a complete R development environment.
+```
